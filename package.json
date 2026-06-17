@@ -1,0 +1,22 @@
+{
+  "name": "frogpad-draft",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A frog-themed League of Legends draft companion for the frogpad: per-role tier lists, preset team comps, a counter-matchup tracker, and a live draft recommender.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^10.12.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.1",
+    "vite": "^5.4.8"
+  }
+}

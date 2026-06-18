@@ -59,6 +59,9 @@ body {
   color: var(--ink);
   background:
     radial-gradient(140% 90% at 50% -10%, #11271c 0%, var(--bg-0) 45%, var(--bg-deep) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--bg-deep);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }

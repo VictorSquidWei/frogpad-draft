@@ -711,14 +711,16 @@ select option { background: var(--panel-solid); }
 }
 
 /* ---------- Matchups ---------- */
-.matchup-form { padding: 16px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 12px; }
+.matchup-form { position: relative; z-index: 20; padding: 16px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 12px; }
 .matchup-form-row { display: flex; gap: 12px; align-items: flex-end; }
 .matchup-form-row .field { flex: 1; }
 .strength-field, .role-field { flex: 0 0 150px; }
 .matchup-notes { flex: 1; }
 .matchup-filters { display: flex; gap: 12px; align-items: center; margin-bottom: 14px; flex-wrap: wrap; }
 .matchup-filters .pool-search { flex: 1; min-width: 200px; }
-.role-pills { display: flex; gap: 5px; }
+.matchup-filters.result-filters { margin-top: -4px; }
+.result-filter-label { font-family: var(--font-hud); font-size: 12px; color: var(--ink-faint); flex: none; }
+.role-pills { display: flex; gap: 5px; flex-wrap: wrap; }
 
 .matchup-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .matchup-row {

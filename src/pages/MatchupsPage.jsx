@@ -28,6 +28,7 @@ export default function MatchupsPage() {
 
   const [q, setQ] = useState("");
   const [roleFilter, setRoleFilter] = useState(null);
+  const [strengthFilter, setStrengthFilter] = useState(null);
 
   const canAdd = pick && vs && pick !== vs;
 
@@ -43,13 +44,14 @@ export default function MatchupsPage() {
     const query = q.trim().toLowerCase();
     return state.matchups.filter((m) => {
       if (roleFilter && m.role !== roleFilter) return false;
+      if (strengthFilter && m.strength !== strengthFilter) return false;
       if (!query) return true;
       return (
         nameOf(m.pick).toLowerCase().includes(query) ||
         nameOf(m.vs).toLowerCase().includes(query)
       );
     });
-  }, [state.matchups, q, roleFilter, nameOf]);
+  }, [state.matchups, q, roleFilter, strengthFilter, nameOf]);
 
   return (
     <div className="page">
@@ -136,6 +138,31 @@ export default function MatchupsPage() {
               onClick={() => setRoleFilter(roleFilter === r.key ? null : r.key)}
             >
               {r.short}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <div className="matchup-filters result-filters">
+        <span className="result-filter-label">Result</span>
+        <div className="role-pills">
+          <button
+            type="button"
+            className={`tag-pill${!strengthFilter ? " is-active" : ""}`}
+            onClick={() => setStrengthFilter(null)}
+          >
+            All
+          </button>
+          {STRENGTHS.map((s) => (
+            <button
+              key={s.key}
+              type="button"
+              className={`tag-pill${strengthFilter === s.key ? " is-active" : ""}`}
+              onClick={() =>
+                setStrengthFilter(strengthFilter === s.key ? null : s.key)
+              }
+            >
+              {s.label}
             </button>
           ))}
         </div>
